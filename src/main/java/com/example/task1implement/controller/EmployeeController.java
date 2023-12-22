@@ -3,11 +3,8 @@ package com.example.task1implement.controller;
 import com.example.task1implement.model.Employee;
 import com.example.task1implement.service.EmployeeService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 @RestController
@@ -39,7 +36,6 @@ public class EmployeeController {
     @PutMapping("{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long id, @RequestBody Employee employee){
         return new ResponseEntity<Employee>(employeeService.updateEmployee(employee, id), HttpStatus.OK);
-
     }
 
     @DeleteMapping("{id}")
